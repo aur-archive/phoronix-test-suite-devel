@@ -1,0 +1,20 @@
+post_install() {
+cat <<EOF
+>>> To complete the installation, you must edit /etc/php/php.ini
+>>> 1. Add / to the open_basedir list.
+>>>     EXAMPLE: 
+>>>     open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/
+>>> 2. Enable the PHP ZIP extension
+>>>     EXAMPLE:
+>>>     extension=zip.so
+>>>
+>>> Additionally, the following PHP extensions are optional, but recommended:
+>>>     OpenSSL : support HTTPS traffic
+>>>     GD      : improved graph rendering (from package: php-gd) (extension=gd.so)
+>>>     POSIX   : highly recommended (extension=posix.so)
+>>>     CURL    : better download experience (from package: php-curl)(extension=curl.so)
+>>> Enable them as desired in /etc/php/php.ini
+>>>
+>>> For a GUI, install php-gtk from the AUR
+EOF
+}
